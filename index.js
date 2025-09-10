@@ -29,7 +29,8 @@ app.post('/ask-gemini', async(req, res)=>{
         // console.log(req.body);
         const prompt = req.body.prompt;
         let response = await main(prompt);
-        res.status(200).json({response});
+        let text = response.text;
+        res.status(200).json({text});
     } catch (error) {
         console.log(error)
     }
